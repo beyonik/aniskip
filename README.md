@@ -1,0 +1,1 @@
+Dart interface for the internal [Aniskip](https://github.com/lexesjan/typescript-aniskip-extension) API.
