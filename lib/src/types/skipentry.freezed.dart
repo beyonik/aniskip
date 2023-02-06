@@ -23,6 +23,7 @@ mixin _$SkipEntry {
   SkipInterval get interval => throw _privateConstructorUsedError;
   @JsonKey(name: 'skipType')
   SkipEntryType get type => throw _privateConstructorUsedError;
+  num get episodeLength => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,9 @@ abstract class $SkipEntryCopyWith<$Res> {
       _$SkipEntryCopyWithImpl<$Res, SkipEntry>;
   @useResult
   $Res call(
-      {SkipInterval interval, @JsonKey(name: 'skipType') SkipEntryType type});
+      {SkipInterval interval,
+      @JsonKey(name: 'skipType') SkipEntryType type,
+      num episodeLength});
 
   $SkipIntervalCopyWith<$Res> get interval;
 }
@@ -56,6 +59,7 @@ class _$SkipEntryCopyWithImpl<$Res, $Val extends SkipEntry>
   $Res call({
     Object? interval = null,
     Object? type = null,
+    Object? episodeLength = null,
   }) {
     return _then(_value.copyWith(
       interval: null == interval
@@ -66,6 +70,10 @@ class _$SkipEntryCopyWithImpl<$Res, $Val extends SkipEntry>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SkipEntryType,
+      episodeLength: null == episodeLength
+          ? _value.episodeLength
+          : episodeLength // ignore: cast_nullable_to_non_nullable
+              as num,
     ) as $Val);
   }
 
@@ -86,7 +94,9 @@ abstract class _$$_SkipEntryCopyWith<$Res> implements $SkipEntryCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {SkipInterval interval, @JsonKey(name: 'skipType') SkipEntryType type});
+      {SkipInterval interval,
+      @JsonKey(name: 'skipType') SkipEntryType type,
+      num episodeLength});
 
   @override
   $SkipIntervalCopyWith<$Res> get interval;
@@ -105,6 +115,7 @@ class __$$_SkipEntryCopyWithImpl<$Res>
   $Res call({
     Object? interval = null,
     Object? type = null,
+    Object? episodeLength = null,
   }) {
     return _then(_$_SkipEntry(
       interval: null == interval
@@ -115,6 +126,10 @@ class __$$_SkipEntryCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SkipEntryType,
+      episodeLength: null == episodeLength
+          ? _value.episodeLength
+          : episodeLength // ignore: cast_nullable_to_non_nullable
+              as num,
     ));
   }
 }
@@ -123,7 +138,9 @@ class __$$_SkipEntryCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SkipEntry implements _SkipEntry {
   const _$_SkipEntry(
-      {required this.interval, @JsonKey(name: 'skipType') required this.type});
+      {required this.interval,
+      @JsonKey(name: 'skipType') required this.type,
+      required this.episodeLength});
 
   factory _$_SkipEntry.fromJson(Map<String, dynamic> json) =>
       _$$_SkipEntryFromJson(json);
@@ -133,10 +150,12 @@ class _$_SkipEntry implements _SkipEntry {
   @override
   @JsonKey(name: 'skipType')
   final SkipEntryType type;
+  @override
+  final num episodeLength;
 
   @override
   String toString() {
-    return 'SkipEntry(interval: $interval, type: $type)';
+    return 'SkipEntry(interval: $interval, type: $type, episodeLength: $episodeLength)';
   }
 
   @override
@@ -146,12 +165,14 @@ class _$_SkipEntry implements _SkipEntry {
             other is _$_SkipEntry &&
             (identical(other.interval, interval) ||
                 other.interval == interval) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.episodeLength, episodeLength) ||
+                other.episodeLength == episodeLength));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, interval, type);
+  int get hashCode => Object.hash(runtimeType, interval, type, episodeLength);
 
   @JsonKey(ignore: true)
   @override
@@ -169,9 +190,9 @@ class _$_SkipEntry implements _SkipEntry {
 
 abstract class _SkipEntry implements SkipEntry {
   const factory _SkipEntry(
-          {required final SkipInterval interval,
-          @JsonKey(name: 'skipType') required final SkipEntryType type}) =
-      _$_SkipEntry;
+      {required final SkipInterval interval,
+      @JsonKey(name: 'skipType') required final SkipEntryType type,
+      required final num episodeLength}) = _$_SkipEntry;
 
   factory _SkipEntry.fromJson(Map<String, dynamic> json) =
       _$_SkipEntry.fromJson;
@@ -181,6 +202,8 @@ abstract class _SkipEntry implements SkipEntry {
   @override
   @JsonKey(name: 'skipType')
   SkipEntryType get type;
+  @override
+  num get episodeLength;
   @override
   @JsonKey(ignore: true)
   _$$_SkipEntryCopyWith<_$_SkipEntry> get copyWith =>

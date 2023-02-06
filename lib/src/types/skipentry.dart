@@ -10,6 +10,7 @@ class SkipEntry with _$SkipEntry {
   const factory SkipEntry({
     required SkipInterval interval,
     @JsonKey(name: 'skipType') required SkipEntryType type,
+    required num episodeLength,
   }) = _SkipEntry;
 
   factory SkipEntry.fromJson(Map<String, Object?> json) =>

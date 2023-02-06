@@ -9,12 +9,14 @@ part of 'skipentry.dart';
 _$_SkipEntry _$$_SkipEntryFromJson(Map<String, dynamic> json) => _$_SkipEntry(
       interval: SkipInterval.fromJson(json['interval'] as Map<String, dynamic>),
       type: $enumDecode(_$SkipEntryTypeEnumMap, json['skipType']),
+      episodeLength: json['episodeLength'] as num,
     );
 
 Map<String, dynamic> _$$_SkipEntryToJson(_$_SkipEntry instance) =>
     <String, dynamic>{
       'interval': instance.interval,
       'skipType': _$SkipEntryTypeEnumMap[instance.type]!,
+      'episodeLength': instance.episodeLength,
     };
 
 const _$SkipEntryTypeEnumMap = {
